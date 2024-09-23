@@ -4,25 +4,24 @@
  * @author Nikolay Makarenko
  * @version 1.0
  */
-class IPad extends IDevice{
+class IPhone extends IDevice{
 
-    final private boolean hasCase;
-    final private String OSVersion ;
+    final private double minutesRemaining;
+    final private String phoneCarrier;
 
-    final static String deviceType = "IPad";
-    final static String purpose = "learning";
+    final static String deviceType  = "IPhone";
+    final static String purpose     = "talking";
 
     /**
      * Constructor for Iad
-     * @param hasCase Determines whether the Ipad has a case
-     * @param OSVersion The OS version that this Ipad has
+     * @param minutesRemaining Determines whether the Ipad has a case
+     * @param phoneCarrier OS version that this Ipad has
      */
-    public IPad(final boolean hasCase,
-                final String OSVersion){
+    public IPhone(double minutesRemaining,
+                  String phoneCarrier) {
         super(purpose);
-        this.hasCase = hasCase;
-        this.OSVersion = OSVersion;
-
+        this.minutesRemaining = minutesRemaining;
+        this.phoneCarrier = phoneCarrier;
     }
 
     /**
@@ -36,8 +35,8 @@ class IPad extends IDevice{
 
         str.append("This device is an " + deviceType +
                 "This device is used for " + purpose +
-                "Currently using" + OSVersion + "." +
-                "Does this have a case? " + hasCase);
+                "Remaining minutes: " + minutesRemaining + "." +
+                "Carrier company this phone is with: " + phoneCarrier);
         System.out.println(str.toString());
     }
 

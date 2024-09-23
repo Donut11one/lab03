@@ -4,10 +4,10 @@
  * @author Nikolay Makarenko
  * @version 1.0
  */
-public class IPod extends IDevice{
+class IPod extends IDevice{
 
     final private int numberOfSongs;
-    final private int maxVolumeDB;
+    final private double maxVolumeDB;
 
     final static String deviceType = "IPod";
 
@@ -19,7 +19,7 @@ public class IPod extends IDevice{
      * @param maxVolume max volume in db as an int
      */
     public IPod(final int numberOfSongs,
-                final int maxVolume){
+                final double maxVolume){
         super(purpose);
 
         this.numberOfSongs  = numberOfSongs;
@@ -37,10 +37,17 @@ public class IPod extends IDevice{
         str = new StringBuilder();
 
         str.append("This device is an " + deviceType +
+                    "This device is used for " + purpose +
                     "Has " + numberOfSongs +"number of songs."+
                     "A max volume of " + maxVolumeDB + "db.");
+        System.out.println(str.toString());
     }
 
+    /**
+     * Overrides the equals function
+     * @param obj the object its comparing to
+     * @return Returns true if its the same
+     */
     @Override
     public boolean equals(Object obj){
         if(obj == null)
