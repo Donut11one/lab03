@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * IPad class that keeps track of an IPad's functions
  * @author Alex He
@@ -38,6 +40,11 @@ class IPhone extends IDevice{
                 "Remaining minutes: " + minutesRemaining + "." +
                 "Carrier company this phone is with: " + phoneCarrier);
         System.out.println(str.toString());
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hashCode(deviceType);
     }
 
     /**

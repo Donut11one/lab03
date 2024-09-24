@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class IPhone16 extends IPhone{
     private final boolean highResolutionCamera;
     private final int gbsOfMemory;
@@ -19,6 +21,11 @@ public class IPhone16 extends IPhone{
                 (highResolutionCamera ? "high resolution camera" : "no high resolution camera"));
         System.out.println(str);
 
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hashCode(highResolutionCamera);
     }
 
     //We are missing hashCode() override and there is no hashCode in parent class. We need to implement them

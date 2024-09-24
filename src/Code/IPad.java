@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * IPad class that keeps track of an IPad's functions
  * @author Alex He
@@ -39,6 +41,11 @@ class IPad extends IDevice{
                 "Currently using" + OSVersion + "." +
                 "Does this have a case? " + hasCase);
         System.out.println(str.toString());
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hashCode(deviceType);
     }
 
     /**

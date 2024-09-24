@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * IPod class that keeps track of an IPod's functions
  * @author Alex He
@@ -41,6 +43,11 @@ class IPod extends IDevice{
                     "Has " + numberOfSongs +"number of songs."+
                     "A max volume of " + maxVolumeDB + "db.");
         System.out.println(str.toString());
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hashCode(deviceType);
     }
 
     /**
