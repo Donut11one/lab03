@@ -17,8 +17,8 @@ class IPhone extends IDevice{
      * @param minutesRemaining Determines whether the Ipad has a case
      * @param phoneCarrier OS version that this Ipad has
      */
-    public IPhone(double minutesRemaining,
-                  String phoneCarrier) {
+    public IPhone(final double minutesRemaining,
+                  final String phoneCarrier) {
         super(purpose);
         this.minutesRemaining = minutesRemaining;
         this.phoneCarrier = phoneCarrier;
@@ -46,7 +46,7 @@ class IPhone extends IDevice{
      * @return Returns true if its the same
      */
     @Override
-    public boolean equals(Object obj){
+    public boolean equals(final Object obj){
         if(obj == null)
         {
             return false;
@@ -58,6 +58,22 @@ class IPhone extends IDevice{
         else{
             return true;
         }
+    }
+
+    public String getPhoneCarrier() {
+        return phoneCarrier;
+    }
+
+    public double getMinutesRemaining() {
+        return minutesRemaining;
+    }
+
+    public String getDeviceType() {
+        return deviceType;
+    }
+
+    public String getPurpose() {
+        return purpose;
     }
 
 
